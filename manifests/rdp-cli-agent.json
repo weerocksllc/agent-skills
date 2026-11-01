@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "skill": "rdp-cli-agent",
+  "product": "rdp-cli",
+  "release": {
+    "version": "0.1.1",
+    "build": "2026103101"
+  },
+  "files": [
+    {
+      "path": "skills/rdp-cli-agent/SKILL.md",
+      "bytes": 7460,
+      "sha256": "63f486b9e24cac7e143bab04510a0ff67a93ac2e36cde221015aea6ae9ac0c01"
+    },
+    {
+      "path": "skills/rdp-cli-agent/references/agent-execution.contract.json",
+      "bytes": 1557,
+      "sha256": "ca4dfbfdf871d406b08c967b54cd8f0bc7fd48eb46e7a99d128dfa6b9a55ea24"
+    },
+    {
+      "path": "skills/rdp-cli-agent/references/agent-execution.md",
+      "bytes": 11217,
+      "sha256": "b758449aa0fee846d0c7bfa634da05cdcb98784d2882f744c50c106bfad3709b"
+    },
+    {
+      "path": "skills/rdp-cli-agent/references/protocols.md",
+      "bytes": 12053,
+      "sha256": "82464a5a49ba4bbe5a8a13a3ff10036a8e128193acbb40eb5017287567d0678c"
+    }
+  ]
+}
