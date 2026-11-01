@@ -9,8 +9,8 @@
   "files": [
     {
       "path": "skills/rdp-cli-agent/SKILL.md",
-      "bytes": 7706,
-      "sha256": "26808759ec008ffcf5118014ed949d212f788754d74a9be37285e10489da7892"
+      "bytes": 8145,
+      "sha256": "64d000ae7456e63bc476d8f8ae7fbbecf550c87aa062de712ec7d9c57440a58a"
     },
     {
       "path": "skills/rdp-cli-agent/references/agent-execution.contract.json",
@@ -29,8 +29,8 @@
     },
     {
       "path": "skills/rdp-cli-agent/references/protocols.md",
-      "bytes": 12053,
-      "sha256": "82464a5a49ba4bbe5a8a13a3ff10036a8e128193acbb40eb5017287567d0678c"
+      "bytes": 14738,
+      "sha256": "d58bded60ea6f8bf23f17ad74ee07a26158c414af98835b63ddb0b3333984c72"
     }
   ]
 }

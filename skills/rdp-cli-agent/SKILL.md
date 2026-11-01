@@ -3,7 +3,7 @@ name: rdp-cli-agent
 description: Operate RDP/VNC desktops, X11 applications or Android 12+ phones headlessly through rdp-cli commands and screenshots. Use for authorized remote tasks, verification and command recovery; check the installed build's protocol capabilities. Local application tasks alone do not require this skill.
 license: MIT
 metadata:
-  version: "1.1.0"
+  version: "1.1.1"
   product-version: "0.1.1"
   product-build: "2026103101"
 ---
@@ -50,7 +50,7 @@ active sessions instead of terminating them as an incidental setup step.
 
 ## Read only the relevant reference
 
-- For VNC/macOS authentication, X11/SFTP, Wayland endpoint selection or Android
+- For RDP TLS compatibility, VNC/macOS authentication, X11/SFTP, Wayland endpoint selection or Android
   USB/Wi-Fi, input and audio, read the matching section in
   [Protocol workflows](references/protocols.md).
 - For observation regions, waits, batches, durable tasks, multi-Agent control,
@@ -104,6 +104,11 @@ timed-out text operation.
 
 ## Recover according to the result
 
+- **RDP TLS handshake failure:** read [RDP TLS recovery](references/protocols.md#rdp-tls-recovery).
+  TLS 1.2 servers can still need legacy signatures; do not conclude the server
+  is unsupported or the password is wrong. For a confirmed legacy target within
+  the user's authorization, explicitly select the compatible profile and verify
+  the resulting session rather than stopping at the first handshake failure.
 - **Stale observation:** obtain and read a new screenshot, then reconsider the
   action. Connection, control and topology changes invalidate observations.
 - **Human takeover/pause:** stop input and report the state. Wait for explicit

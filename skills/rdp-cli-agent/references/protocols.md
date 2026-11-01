@@ -3,9 +3,55 @@
 Read only the section for the selected protocol. All examples use the installed
 executable's help and the explicit session/observation identifiers from results.
 
+- [RDP TLS recovery](#rdp-tls-recovery)
 - [VNC authentication](#vnc-authentication)
 - [Linux graphical sessions](#linux-graphical-sessions)
 - [Android phones](#android-phones)
+
+## RDP TLS recovery
+
+`RDP_TLS_HANDSHAKE_FAILED` is a transport-encryption negotiation failure, not
+evidence of a wrong password or an unsupported RDP server. Read `connect --help`
+and the failed session's `status` to check the selected `tls_profile`. The
+modern-profile error alone does not identify which TLS version the server
+supports: TLS 1.2 servers can still use older signatures such as SHA-1.
+
+The released client supports `--tls-profile modern|legacy`. Modern requires
+TLS 1.2 and modern cryptography. Legacy permits older signatures/ciphers and
+TLS 1.0, but **does not force TLS 1.0**; it can still negotiate TLS 1.2.
+Changing `--cert-policy` alone does not resolve this cryptographic mismatch.
+
+For a user-authorized target on a trusted LAN/VPN whose legacy requirement is
+established by target configuration, previous acceptance or specific handshake
+evidence, explicitly retry the same target once with `--tls-profile legacy`.
+Preserve the host, port, user/domain, credential source, certificate policy and
+other intended settings; change only the TLS profile. A changed request needs
+a new request ID. Use a new `connect`, because `reconnect` retains the original
+session profile. Existing authorization for this compatibility choice remains
+valid; this Skill does not require another permission question. A private IP
+or a generic network error alone does not establish a legacy requirement.
+
+Do not override a user's modern-only requirement. Do not change server-wide
+TLS/NLA settings, disable strict certificate validation, replace credentials,
+or switch to a local GUI as a TLS workaround. If the target requirement is
+unknown, investigate the handshake/configuration instead of asserting that
+the server only supports old TLS or declaring the product incompatible.
+If legacy was already selected, or the one compatibility attempt fails, inspect
+that actual error; do not loop through unchanged attempts. Authentication and
+certificate errors follow their own recovery paths, not another TLS downgrade.
+
+Example for an established legacy target (feed the original password privately
+on stdin; retain any original port/domain/certificate and other options):
+
+```sh
+rdp-cli connect --host HOST --user USER --password-stdin --tls-profile legacy
+```
+
+Save the successful response's `data.session`, check `status` and capture/read
+a screenshot before claiming a usable desktop. A TLS handshake by itself is
+not login or desktop acceptance. The reported `tls_profile` is configuration,
+not the negotiated TLS version. Reuse the verified target profile for later
+connections within the user's task; do not weaken unrelated sessions.
 
 ## VNC authentication
 
