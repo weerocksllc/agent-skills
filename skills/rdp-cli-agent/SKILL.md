@@ -3,7 +3,7 @@ name: rdp-cli-agent
 description: Operate RDP/VNC desktops, X11 applications or Android 12+ phones headlessly through rdp-cli commands and screenshots. Use for authorized remote tasks, verification and command recovery; check the installed build's protocol capabilities. Local application tasks alone do not require this skill.
 license: MIT
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
   product-version: "0.1.1"
   product-build: "2026103101"
 ---
@@ -27,19 +27,22 @@ commands of the installed executable instead of relying on the version alone.
 Use a host that can run local commands and inspect images, with access to the
 authorized target. The rdp-cli executable is a separate runtime requirement.
 
-Find the executable supplied by the user or installed on PATH. Read its
-`--version`, `--help-json` and the relevant command's `--help`; these describe
-the installed file, while the website may describe a newer release. Reuse a
-working installation that supports the task. Do not update on every invocation.
+Locate the executable using [Local installation](references/local-installation.md):
+use an explicit user-supplied path, otherwise read the per-user installation
+record, then check PATH and standard install directories. Validate the actual
+program before using it; refresh a missing or stale record after discovery.
+Read its `--version`, `--help-json` and the relevant command's `--help`.
+Reuse a working program that supports the task; do not update it on every use.
 
 If the program is missing, follow the [official installation guide](https://rdp-cli.com/agent-install.md)
-within the user's authorized setup/task scope. It uses the current
-[release manifest](https://rdp-cli.com/agent-install.json) for OS/CPU selection,
-file sizes, checksums and the complete Skill file list. Do not hard-code download
-filenames here. If this Skill was already installed from GitHub/skills.sh,
-verify and reuse it; do not recursively reinstall it or create another copy.
-If the guide and installed Skill differ, compare their product requirements;
-perform only an authorized update and preserve local customizations.
+within the user's authorized setup/task scope. Select and verify the native
+release from its [manifest](https://rdp-cli.com/agent-install.json).
+Every explicit Skill installation/update replaces the previous Skill at the
+same selected location, including custom edits: the last installed package wins.
+Replace the complete verified Skill, not just SKILL.md. Do not create another
+scope or invoke an installer recursively. Ordinary remote tasks do not reinstall
+Skills. The executable location record lives outside the Skill and survives
+replacement; see the local installation reference for its format and lookup.
 
 Installing the Skill alone does not install rdp-cli. Checking help does not
 require a remote session. An upgrade must preserve user data and account for
