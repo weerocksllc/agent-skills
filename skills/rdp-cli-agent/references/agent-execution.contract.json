@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "availability": "released",
+  "feature_contract_version": 1,
+  "check_installed_executable": [
+    "--version",
+    "--help-json"
+  ],
+  "required_features": [
+    "screenshot_roi",
+    "frame_comparison",
+    "bounded_wait",
+    "batch",
+    "durable_tasks",
+    "named_agent_claims",
+    "connection_profiles",
+    "doctor",
+    "mcp_stdio",
+    "android_virtual_display"
+  ],
+  "required_commands": {
+    "screenshot": [
+      "--region",
+      "--max-width",
+      "--since"
+    ],
+    "wait": [
+      "--condition",
+      "--stable-ms",
+      "--transfer-id",
+      "--operation-id"
+    ],
+    "batch": [
+      "--steps-stdin",
+      "--request-id"
+    ],
+    "tasks new-run": [
+      "--from-checkpoint"
+    ],
+    "tasks export": [
+      "--include-evidence"
+    ],
+    "agents register": [
+      "--name"
+    ],
+    "control handoff": [
+      "--to-agent",
+      "--claim-ref"
+    ],
+    "profiles import": [
+      "--json"
+    ],
+    "doctor": [
+      "--profile",
+      "--probe"
+    ],
+    "mcp stdio": [],
+    "connect": [
+      "--profile",
+      "--android-display",
+      "--android-start-app"
+    ]
+  },
+  "builtin_ocr": false,
+  "documents": [
+    "docs/agent-task-execution.md",
+    "skills/rdp-cli-agent/SKILL.md",
+    "skills/rdp-cli-agent/references/agent-execution.md",
+    "skills/rdp-cli-agent/references/protocols.md",
+    "docs/android.md",
+    "docs/android-display.md",
+    "docs/android-apps.md",
+    "docs/android-audio.md"
+  ],
+  "release": {
+    "version": "0.1.1",
+    "build": "2026103101"
+  }
+}
