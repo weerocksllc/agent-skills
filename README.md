@@ -29,8 +29,8 @@ Tell your agent:
 
 > Use rdp-cli-agent. Check whether rdp-cli is installed and supports my task.
 > If it is missing, follow https://rdp-cli.com/agent-install.md to install the
-> official file for this computer. Reuse this Skill rather than installing it
-> again. Verify the local setup before connecting to a target.
+> official file for this computer. Refresh this Skill at the same location
+> and record the installed executable path. Verify setup before connecting.
 
 For installation without the Skills CLI, give your agent the same
 [official installation guide](https://rdp-cli.com/agent-install.md).
@@ -63,7 +63,15 @@ npx skills update
 
 These commands check/update installed Skills; they do not upgrade rdp-cli or
 install every future Skill in this repository. Program updates use the official
-installation guide and account for active sessions and user customizations.
+installation guide and account for active sessions and user data.
+
+Each explicit Skill installation/update replaces the previous package at the
+selected location, including custom edits. The last installation wins; use the
+same scope/location instead of creating a second copy. Ordinary use does not
+reinstall. The Agent records and validates the executable location separately;
+see [local installation](skills/rdp-cli-agent/references/local-installation.md).
+That local record survives Skill replacement. Existing programs can be found
+through PATH/default locations and registered without reinstalling them.
 
 ## Maintenance and licensing
 
