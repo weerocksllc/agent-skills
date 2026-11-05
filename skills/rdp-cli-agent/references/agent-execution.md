@@ -5,7 +5,7 @@ commands and options in `--help-json` and `version.data.agent_execution` (contra
 version 1). A feature flag is implementation availability, not remote acceptance.
 Check `schema_version`, protocol build
 capabilities and the selected session's negotiated capabilities. These features
-are released in **0.1.2 / build 2026110101**. There is no built-in OCR, text
+are released in **0.2.0 / build 2026110501**. There is no built-in OCR, text
 wait or control detection; interpret images with the Agent's own vision.
 
 The machine-readable [execution contract](agent-execution.contract.json) lists
