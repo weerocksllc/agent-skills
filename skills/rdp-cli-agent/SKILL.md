@@ -3,9 +3,9 @@ name: rdp-cli-agent
 description: Operate RDP/VNC desktops, X11 applications or Android 12+ phones headlessly through rdp-cli commands and screenshots. Use for authorized remote tasks, verification and command recovery; check the installed build's protocol capabilities. Local application tasks alone do not require this skill.
 license: MIT
 metadata:
-  version: "1.2.1"
-  product-version: "0.2.0"
-  product-build: "2026110501"
+  version: "1.2.2"
+  product-version: "0.2.1"
+  product-build: "2026110601"
 ---
 
 # Remote tasks with rdp-cli
@@ -30,7 +30,7 @@ Use the executable supplied by the user or available on PATH. Consult
 For cropped observations, pixel waits, batches, durable task evidence, named
 Agents, profiles, MCP or Android virtual displays, first check the installed
 `--help-json` and read [Agent execution](references/agent-execution.md).
-These additions are released in **0.2.0 / build 2026110501**. This Skill targets
+These additions are released in **0.2.1 / build 2026110601**. This Skill targets
 that release; older files also reported 0.1.0, so verify the feature contract and
 commands of the installed executable instead of relying on the version alone.
 
@@ -116,6 +116,16 @@ timed-out text operation.
 
 ## Recover according to the result
 
+- **Local storage:** `LOCAL_STORAGE_FULL` means the computer running rdp-cli
+  cannot allocate its frame cache (about 256 MiB per session). It is not a
+  remote password, TLS or request-format error. Free authorized local space,
+  then submit a new connect request; unchanged retries cannot fix it. Do not
+  delete active caches, stop unrelated sessions or open a viewer as a workaround.
+  To use another drive, follow `connect --help`: use `RDPCLI_DATA_DIR` plus a
+  fresh `RDPCLI_RUNTIME_DIR` for a separate service. Changing the data variable
+  alone does not move a running service.
+  `LOCAL_STORAGE_ERROR` is a different access failure: inspect `native_error`
+  and local drive permissions instead of assuming the disk is full.
 - **RDP TLS handshake failure:** read [RDP TLS recovery](references/protocols.md#rdp-tls-recovery).
   TLS 1.2 servers can still need legacy signatures; do not conclude the server
   is unsupported or the password is wrong. For a confirmed legacy target within
