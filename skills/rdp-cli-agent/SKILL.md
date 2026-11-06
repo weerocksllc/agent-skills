@@ -3,15 +3,27 @@ name: rdp-cli-agent
 description: Operate RDP/VNC desktops, X11 applications or Android 12+ phones headlessly through rdp-cli commands and screenshots. Use for authorized remote tasks, verification and command recovery; check the installed build's protocol capabilities. Local application tasks alone do not require this skill.
 license: MIT
 metadata:
-  version: "1.2.0"
+  version: "1.2.1"
   product-version: "0.2.0"
   product-build: "2026110501"
 ---
 
 # Remote tasks with rdp-cli
 
-Prefer the existing CLI for remote work. It receives remote frames and sends
-protocol input directly; opening a local window or browser is not a prerequisite.
+## Work headlessly by default
+
+Use rdp-cli commands or its built-in MCP for remote work. Connect, observe,
+send keyboard/mouse input and transfer files without opening a local viewer.
+Headless operation is the default workflow; it does not need an extra flag.
+
+GUI and Web viewers are for a person to watch, pause or take over the same
+session. Do not automatically open them or drive them with local computer-use
+to perform an ordinary remote task. An explicit viewer task or necessary viewer
+diagnosis can use those interfaces within the user's authorized scope.
+On command failure, follow the recovery guidance below instead of switching
+to a viewer. While a person holds control, stop sending remote input; after
+control returns, observe the screen again before continuing.
+
 Use the executable supplied by the user or available on PATH. Consult
 `rdp-cli --help` and `<command> --help` for the installed version's exact options.
 
