@@ -3,9 +3,9 @@ name: rdp-cli-agent
 description: Operate RDP/VNC desktops, X11 applications or Android 12+ phones headlessly through rdp-cli commands and screenshots. Use for authorized remote tasks, verification and command recovery; check the installed build's protocol capabilities. Local application tasks alone do not require this skill.
 license: MIT
 metadata:
-  version: "1.3.0"
-  product-version: "0.3.0"
-  product-build: "2026110701"
+  version: "1.3.1"
+  product-version: "0.3.1"
+  product-build: "2026110702"
 ---
 
 # Remote tasks with rdp-cli
@@ -30,9 +30,11 @@ Use the executable supplied by the user or available on PATH. Consult
 For cropped observations, pixel waits, batches, durable task evidence, named
 Agents, profiles, MCP or Android virtual displays, first check the installed
 `--help-json` and read [Agent execution](references/agent-execution.md).
-This Skill targets **0.3.0 / build 2026110701**, including observer activity
+This Skill targets **0.3.1 / build 2026110702**, including observer activity
 hints and the previously released Agent execution commands; older files also reported 0.1.0, so verify the feature contract and
-commands of the installed executable instead of relying on the version alone.
+commands of the installed executable instead of relying on the version alone. The
+tray can show Agent activity during a human file transfer. Observer hints include
+file rejections and remain separate from confirmed task results.
 
 ## Prepare the local executable
 

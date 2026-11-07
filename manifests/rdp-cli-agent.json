@@ -3,29 +3,29 @@
   "skill": "rdp-cli-agent",
   "product": "rdp-cli",
   "release": {
-    "version": "0.3.0",
-    "build": "2026110701"
+    "version": "0.3.1",
+    "build": "2026110702"
   },
   "files": [
     {
       "path": "skills/rdp-cli-agent/SKILL.md",
-      "bytes": 10034,
-      "sha256": "4423a6fb0241b23eb5aad692a8318bad292f9764b3e94ca8a5292af44c457a0d"
+      "bytes": 10185,
+      "sha256": "8be7e0b17872ebcf0b0f2b0d53c1413ff474bd32f6ae3a0b8995488f194b6394"
     },
     {
       "path": "skills/rdp-cli-agent/references/agent-execution.contract.json",
       "bytes": 1557,
-      "sha256": "6e7c7184c55cd619a7449e87afc56ea32287a7c59ccada7ffecb9e47c70561bf"
+      "sha256": "701d128f3873297fbddf1fdad1ac65ee255dfc674f2f984024c4c5be7bc51c70"
     },
     {
       "path": "skills/rdp-cli-agent/references/agent-execution.md",
       "bytes": 11249,
-      "sha256": "eeb29c05c572c854902e7ff97b2a8958ca82d93b9e1d98446d84252f9d870bd9"
+      "sha256": "cf7d6664b565012eeaee6fe02cb46b19e123c04d0721e594c3b8771844f9fbbc"
     },
     {
       "path": "skills/rdp-cli-agent/references/local-installation.md",
       "bytes": 4507,
-      "sha256": "4d3e8f349c9d08d33cffbefe20bfe3c9400ff91141af53406f20c480dd988bee"
+      "sha256": "7a1668fe258cd343b62341375b55483ed8d626625659b3a2a9fbc33043447c30"
     },
     {
       "path": "skills/rdp-cli-agent/references/protocols.md",

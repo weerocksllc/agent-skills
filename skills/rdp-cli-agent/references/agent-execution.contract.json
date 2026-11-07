@@ -73,7 +73,7 @@
     "docs/android-audio.md"
   ],
   "release": {
-    "version": "0.3.0",
-    "build": "2026110701"
+    "version": "0.3.1",
+    "build": "2026110702"
   }
 }
