@@ -24,7 +24,7 @@ The record is UTF-8 JSON without a BOM:
   "schemaVersion": 1,
   "product": "rdp-cli",
   "executable": "C:\\Users\\Alice\\Tools\\rdp-cli\\rdp-cli.exe",
-  "version": "0.2.0"
+  "version": "0.3.0"
 }
 ```
 

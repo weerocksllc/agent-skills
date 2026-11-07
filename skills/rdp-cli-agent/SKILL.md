@@ -3,9 +3,9 @@ name: rdp-cli-agent
 description: Operate RDP/VNC desktops, X11 applications or Android 12+ phones headlessly through rdp-cli commands and screenshots. Use for authorized remote tasks, verification and command recovery; check the installed build's protocol capabilities. Local application tasks alone do not require this skill.
 license: MIT
 metadata:
-  version: "1.2.2"
-  product-version: "0.2.1"
-  product-build: "2026110601"
+  version: "1.3.0"
+  product-version: "0.3.0"
+  product-build: "2026110701"
 ---
 
 # Remote tasks with rdp-cli
@@ -30,8 +30,8 @@ Use the executable supplied by the user or available on PATH. Consult
 For cropped observations, pixel waits, batches, durable task evidence, named
 Agents, profiles, MCP or Android virtual displays, first check the installed
 `--help-json` and read [Agent execution](references/agent-execution.md).
-These additions are released in **0.2.1 / build 2026110601**. This Skill targets
-that release; older files also reported 0.1.0, so verify the feature contract and
+This Skill targets **0.3.0 / build 2026110701**, including observer activity
+hints and the previously released Agent execution commands; older files also reported 0.1.0, so verify the feature contract and
 commands of the installed executable instead of relying on the version alone.
 
 ## Prepare the local executable
@@ -153,6 +153,14 @@ When a person wants to watch, use `watch --session SESSION --viewer window`
 or `watch --session SESSION --viewer web`, or direct them to the tray/menu bar. These viewers
 share the session and start read-only. Continue ordinary remote automation with
 CLI commands; respect explicit human takeover and return.
+
+GUI/Web action hints make clicks, scrolling, shortcuts and input counts visible
+to the person, while separate transfer hints preserve human/Agent origin. The
+tray/menu bar and session list show activity where the desktop supports them.
+These are presentation aids: they do not alter screenshots or prove that the
+remote task succeeded. Sensitive input content is not shown. Keep using fresh
+screenshots and command results to verify work; do not open a viewer just to
+read its activity hints.
 
 Computer-use remains useful for local applications, viewer diagnosis, explicit
 GUI tasks, or a justified fallback. Before switching to a path that affects the
